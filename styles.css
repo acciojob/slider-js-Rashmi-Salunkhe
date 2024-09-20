@@ -1,1 +1,88 @@
 /*  your css code here. If applicable */
+/* General container styling */
+.slider-container {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-slide, .right-slide {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide {
+    left: 0;
+    background-color: #f2f2f2;
+}
+
+.right-slide {
+    right: 0;
+}
+
+.image-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.left-slide div, .right-slide div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.left-slide div.active, .right-slide div.active {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Button controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 20px);
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.up-button, .down-button {
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+.up-button:hover, .down-button:hover {
+    background-color: #555;
+}

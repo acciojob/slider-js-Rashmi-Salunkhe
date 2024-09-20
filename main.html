@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Slider</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <div class="slider-container">
+        <div class="left-slide">
+            <div id="slide-1">
+                <h1>Nature flower</h1>
+                <p>All in pink</p>
+            </div>
+            <div id="slide-2">
+                <h1>Bluuue Sky</h1>
+                <p>With it's mountains</p>
+            </div>
+            <div id="slide-3">
+                <h1>Lonely castle</h1>
+                <p>In the wilderness</p>
+            </div>
+            <div id="slide-4">
+                <h1>Flying eagle</h1>
+                <p>In the sunset</p>
+            </div>
+        </div>
 
+        <div class="right-slide">
+            <div id="slide-1-image" class="image-slide" style="background-image: url('nature-flower.jpg');"></div>
+            <div id="slide-2-image" class="image-slide" style="background-image: url('blue-sky.jpg');"></div>
+            <div id="slide-3-image" class="image-slide" style="background-image: url('castle.jpg');"></div>
+            <div id="slide-4-image" class="image-slide" style="background-image: url('eagle.jpg');"></div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="up-button">&#9650;</button>
+            <button class="down-button">&#9660;</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

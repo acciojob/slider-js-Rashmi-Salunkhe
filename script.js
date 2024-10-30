@@ -1,30 +1,26 @@
 //your JS code here. If required.
+const slides = document.querySelectorAll('.slide');
 const upButton = document.querySelector('.up-button');
 const downButton = document.querySelector('.down-button');
-const slidesText = document.querySelectorAll('.left-slide div');
-const slidesImage = document.querySelectorAll('.right-slide div');
 let currentSlide = 0;
-const totalSlides = slidesText.length;
 
-function updateSlides() {
-    // Hide all slides
-    slidesText.forEach(slide => slide.classList.remove('active'));
-    slidesImage.forEach(slide => slide.classList.remove('active'));
-    
-    // Show the current slide
-    slidesText[currentSlide].classList.add('active');
-    slidesImage[currentSlide].classList.add('active');
+function showSlide(index) {
+    slides.forEach(slide => slide.style.display = 'none');
+    slides[index].style.display = 'flex';
 }
 
-upButton.addEventListener('click', () => {
-    currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
-    updateSlides();
-});
+function moveUp() {
+    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+    showSlide(currentSlide);
+}
 
-downButton.addEventListener('click', () => {
-    currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
-    updateSlides();
-});
+function moveDown() {
+    currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+    showSlide(currentSlide);
+}
 
-// Initialize the first slide
-updateSlides();
+upButton.addEventListener('click', moveUp);
+downButton.addEventListener('click', moveDown);
+
+// Initialize first slide
+showSlide(currentSlide);

@@ -1,88 +1,74 @@
 /*  your css code here. If applicable */
-/* General container styling */
-.slider-container {
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.slider-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 80%;
+    height: 80%;
+    display: flex;
     overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .left-slide, .right-slide {
     width: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-slide .slide, .right-slide .slide {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: none;
     align-items: center;
-    position: absolute;
-    transition: transform 0.5s ease-in-out;
-}
-
-.left-slide {
-    left: 0;
-    background-color: #f2f2f2;
-}
-
-.right-slide {
-    right: 0;
-}
-
-.image-slide {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.left-slide div, .right-slide div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
     text-align: center;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
 }
 
-.left-slide div.active, .right-slide div.active {
-    opacity: 1;
+.left-slide .slide h1 {
+    font-size: 2em;
+    margin: 10px 0;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.left-slide .slide p {
+    font-size: 1.2em;
 }
 
-p {
-    font-size: 1.5em;
-    color: #333;
+.right-slide .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
-/* Button controls */
-.slider-controls {
+button {
     position: absolute;
-    top: 50%;
-    left: calc(50% - 20px);
-    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
     z-index: 10;
 }
 
-.up-button, .down-button {
-    display: block;
-    margin: 5px 0;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
+.up-button {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.up-button:hover, .down-button:hover {
-    background-color: #555;
+.down-button {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
